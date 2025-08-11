@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced To-Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-2xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-10">
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/20fb6e88-11e7-48cc-b273-a621983a0fa3.png" alt="ToDo App logo in purple with white text" class="mx-auto mb-6" />
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Task Manager</h1>
+      <p class="text-gray-600">Organize your day, one task at a time</p>
+    </div>
+    
+    <!-- Add Task Form -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <form id="taskForm" class="flex gap-3">
+        <input 
+          type="text" 
+          id="taskInput" 
+          placeholder="What needs to be done?" 
+          class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          required
+        >
+        <button 
+          type="submit" 
+          class="btn btn-primary text-white px-4 py-2 rounded-md font-medium"
+        >
+          Add Task
+        </button>
+      </form>
+    </div>
+    
+    <!-- Task List -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div id="taskList" class="divide-y divide-gray-200">
+        <!-- Tasks will be added here dynamically -->
+        <div class="p-4 text-center text-gray-500 italic" id="emptyState">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a473fe08-7510-4475-858a-3c9804763355.png" alt="Illustration showing an empty task list with Add some tasks message" class="mx-auto mb-4 rounded-md" />
+          <p>Your task list is empty. Add a task to get started!</p>
+        </div>
+      </div>
+      
+      <!-- Stats -->
+      <div class="bg-gray-50 px-4 py-3 text-sm text-gray-600 flex justify-between border-t border-gray-200">
+        <span id="taskCount">0 tasks</span>
+        <button id="clearCompleted" class="text-indigo-600 hover:text-indigo-800 hidden">Clear completed</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
